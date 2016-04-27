@@ -9,14 +9,13 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.List;
-
-import butterknife.Bind;
+import butterknife.BindView;
+import butterknife.BindViews;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.OnItemClick;
 import butterknife.OnLongClick;
+import java.util.List;
 
 import static android.widget.Toast.LENGTH_SHORT;
 
@@ -31,17 +30,15 @@ public class SimpleActivity extends Activity {
     }
   };
 
-  @Bind(R.id.title) TextView title;
-  @Bind(R.id.subtitle) TextView subtitle;
-  @Bind(R.id.hello) Button hello;
-  @Bind(R.id.list_of_things) ListView listOfThings;
-  @Bind(R.id.footer) TextView footer;
+  @BindView(R.id.title) TextView title;
+  @BindView(R.id.subtitle) TextView subtitle;
+  @BindView(R.id.hello) Button hello;
+  @BindView(R.id.list_of_things) ListView listOfThings;
+  @BindView(R.id.footer) TextView footer;
 
-  @Bind({ R.id.title, R.id.subtitle, R.id.hello })
-  List<View> headerViews;
+  @BindViews({ R.id.title, R.id.subtitle, R.id.hello }) List<View> headerViews;
 
   private SimpleAdapter adapter;
-
 
   @OnClick(R.id.hello) void sayHello() {
     Toast.makeText(this, "Hello, views!", LENGTH_SHORT).show();

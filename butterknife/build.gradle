@@ -9,12 +9,18 @@ android {
 
     consumerProguardFiles 'proguard-rules.txt'
   }
+
+  lintOptions {
+    textReport true
+    textOutput 'stdout'
+  }
 }
 
 dependencies {
   compile project(':butterknife-annotations')
   compile deps.supportAnnotations
   provided deps.supportv4
+  provided deps.supportDesign
 
   testCompile deps.junit
   testCompile deps.truth
